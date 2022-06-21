@@ -1,0 +1,41 @@
+{% extends 'web/base_full_screen.html' %}
+{% load static %}
+{% load bootstrap_tags %}
+
+{% block customheader %}
+    <script>
+        function onSubmit(token) {
+            document.getElementById("loginForm").submit();
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div class="login-box-body">
+        <p class="login-box-msg">Silahkan masukan username dan password</p>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <form method="post" id="loginForm">
+            {% csrf_token %}
+            {{ form|as_bootstrap }}
+          <div class="row">
+            <div class="col-xs-8">
+            </div>
+            <div class="col-xs-4">
+                <button
+                class="g-recaptcha btn btn-primary btn-block btn-flat"
+                data-callback="onSubmit">
+                Masuk
+                </button>
+            </div>
+          </div>
+        </form>
+    </div>
+
+{% endblock %}

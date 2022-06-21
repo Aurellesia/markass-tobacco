@@ -1,0 +1,9 @@
+.number {
+    text-align: right;
+}
+
+input[type=number] {
+    text-align: right;
+}
+
+.select2 { width: 100% !important }

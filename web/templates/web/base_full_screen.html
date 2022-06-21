@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap_tags %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Markass Tobacco</title>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        <link rel="stylesheet" href="{% static 'bower_components/admin-lte/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bower_components/admin-lte/dist/css/adminlte.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bower_components/admin-lte/plugins/select2/css/select2.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bower_components/admin-lte/plugins/jqvmap/jqvmap.css' %}">
+        <link rel="stylesheet" href="{% static 'bower_components/admin-lte/plugins/daterangepicker/daterangepicker.css' %}">
+        <link rel="stylesheet" href="{% static 'bower_components/admin-lte/plugins/pace-progress/pace.min.css' %}">
+
+        <link rel="stylesheet" href="{% static 'report/report.css' %}">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i"
+          type="text/css" media="all">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+
+        {% block customheader %}
+        {% endblock %}
+
+        <style>
+            .select2 {
+                width: 100% !important
+            }
+        </style>
+    </head>
+    <body class="hold-transition login-page">
+        <div class="login-box">
+            <div class="login-logo">
+                {{ header_title|default:"Markass Tobacco" }}
+            </div>
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <script src="{% static 'bower_components/admin-lte/plugins/jQuery/jQuery.min.js' %}"></script>
+        <script src="{% static 'bower_components/admin-lte/plugins/daterangepicker/daterangepicker.js' %}"></script>
+
+        <script src="{% static 'bower_components/admin-lte/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'bower_components/admin-lte/plugins/select2/js/select2.min.js' %}"></script>
+
+        {% block customscript %}
+        {% endblock %}
+    </body>
+</html>
